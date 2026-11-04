@@ -1,1 +1,2 @@
-DATABASE_URL= 'URL_do_banco_de_dados'
+DATABASE_URL= 'postgresql://neondb_owner:npg_0g9jWqNHZRMu@ep-wild-wave-b6nq194v-pooler.c-2.sa-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
+SEGREDO= "seuSegredoSuperSeguro"
