@@ -25,13 +25,13 @@ async function buscar (req, res) {
 // criar registros na tabela usuarios 
 async function criar (req, res) {
     try {
-        const {nome, email, senha, n_veis_id} = req.body;
+        const {nome, email, senha, niveis_id} = req.body;
         const sql = await PRISMA.usuarios.create({
             data:{
                 nome: nome,
                 email: email,
                 senha: senha,
-                n_veis_id: n_veis_id
+                niveis_id: niveis_id
             }
         })
 

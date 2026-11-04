@@ -3,7 +3,7 @@ const cors = require("cors")
 const niveisRoutes = require("./src/routes/niveisRoutes")
 const imoveisTipoRoutes = require("./src/routes/imoveisTipoRoutes")
 const usuariosRoutes = require("./src/routes/usuariosRoutes")
-
+const locatariosRoutes = require("./src/routes/locatariosRoutes")
 
 const app = express();
 
@@ -17,6 +17,7 @@ app.get("/", (req, res) => {
 app.use("/niveis", niveisRoutes)
 app.use("/imoveis-tipo", imoveisTipoRoutes)
 app.use("/usuarios", usuariosRoutes)
+app.use("/locatarios", locatariosRoutes)
 
 
 app.listen(3000, () => {
