@@ -10,14 +10,21 @@ const historicoImovel = require("./src/routes/historicoImovelRoutes")
 const {login} = require("./src/controllers/usuariosController");
 const { usuarioAutenticado } = require("./src/middlewares/usuarioMiddlewares");
 
+//linhas copiasdad swagger-ui-expres
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./src/docs/swagger-output.json');
+
 const app = express();
 
 app.use(cors()); //permite que a api receba requisições externas
 app.use(express.json()); //transforma o JSON do corpo da requisição em js
 
+//na rota rais redirecionamos diretamente para a pagina da documentação
 app.get("/", (req, res) => {
-    res.send("ola mundo");
+    res.redirect("/docs");
 });
+//linhas copiasdad swagger-ui-expres
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.post("/login", login)
 

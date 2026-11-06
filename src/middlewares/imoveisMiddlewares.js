@@ -11,7 +11,6 @@ function validarDados(req, res, next) {
         "quartos",
         "suites",
         "banheiros",
-        "garagens",
         "tipo_id"
     ];
     const dados = req.body;
@@ -24,10 +23,8 @@ function validarDados(req, res, next) {
                 description: `Coluna ${campo} não informada`
             }
         }))
-    
-        next();
-
     }
+    next();
 }
 
 module.exports = {
