@@ -1,3 +1,35 @@
+// async function buscar(req, res){
+//     try {
+//         const query = {};
+//         const includeObj = {};
+
+//         if (req.query.manutencoes === "true") {
+//             includeObj.historico_manutecao = true;
+//         }
+
+//         if (req.query.historicos === "true") {
+//             includeObj.historico_imovel = true;
+//         }
+        
+//         if (req.query.locatario === "true") {
+//             includeObj.locatarios = true;
+//         }
+
+//         // Se houver pelo menos um relacionamento solicitado, adiciona o include na query
+//         if (Object.keys(includeObj).length > 0) {
+//             query.include = includeObj;
+//         }
+
+//         const linhas = await PRISMA.imoveis.findMany(query);
+//         return res.json(linhas);
+//     } catch (error) {
+//         return res.status(500).json({
+//             type: "error",
+//             description: error.message 
+//         });
+//     }
+// }
+
 const PRISMA = require("../services");
 
 // buscar registros na tabela imoveis 
@@ -10,6 +42,16 @@ async function buscar(req, res) {
         if (req.query.manutencoes == "true"){
             query.include = {
                 historico_manutencoes: true
+            }
+        } 
+        if (req.query.historicos == "true"){
+            query.include = {
+                historico_imovel: true
+            }
+        } 
+        if (req.query.locatario == "true"){
+            query.include = {
+                locatarios: true
             }
         } 
         
