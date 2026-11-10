@@ -11,7 +11,7 @@ rotas.get("/",
       #swagger.responses[200] = {
           description: 'Lista de usuarios retornada com sucesso',
           schema: [{ 
-            id: feg9500d-2829-4bj0-9058-b5588341cb9d, 
+            id: 'feg9500d-2829-4bj0-9058-b5588341cb9d', 
             nome: 'jamaia nicolas', 
             email: 'jamaiaMatos@email.com',
             nivel_id: "6cd868fb-bd03-4735-8001-8264ae912389"

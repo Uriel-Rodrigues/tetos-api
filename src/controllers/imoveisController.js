@@ -3,6 +3,16 @@ const PRISMA = require("../services");
 // buscar registros na tabela imoveis 
 async function buscar(req, res) {
     try {
+
+        //query permite pegar um parametro opcional dentro da URL no caso abaixo entamos verificando se o parametro "manutencoes"
+        //existe no caso de existir fazemos a requisição trasendo o historico de de manutenções do imovel. 
+        const query = {};
+        if (req.query.manutencoes == "true"){
+            query.include = {
+                historico_manutencoes: true
+            }
+        } 
+        
         const linhas = await PRISMA.imoveis.findMany();
         res.json(linhas)
 

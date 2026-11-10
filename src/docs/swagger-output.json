@@ -608,31 +608,28 @@
             "required": true,
             "description": "Dados para criação do usuario",
             "schema": {
-              "type": "object",
-              "properties": {
-                "nome": {
-                  "type": "string",
-                  "example": "nome"
-                },
-                "email": {
-                  "type": "string",
-                  "example": "email"
-                },
-                "senha": {
-                  "type": "string",
-                  "example": "senha"
-                },
-                "nivel_id": {
-                  "type": "string",
-                  "example": "nivel_id"
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "nome": {
+                    "type": "string",
+                    "example": "nome"
+                  },
+                  "email": {
+                    "type": "string",
+                    "example": "email"
+                  },
+                  "senha": {
+                    "type": "string",
+                    "example": "senha"
+                  },
+                  "nivel_id": {
+                    "type": "string",
+                    "example": "nivel_id"
+                  }
                 }
-              },
-              "required": [
-                "nome",
-                "email",
-                "senha",
-                "nivel_id"
-              ]
+              }
             }
           }
         ],
@@ -672,26 +669,24 @@
             "required": true,
             "description": "Novos dados do usuario",
             "schema": {
-              "type": "object",
-              "properties": {
-                "nome": {
-                  "type": "string",
-                  "example": "nome"
-                },
-                "email": {
-                  "type": "string",
-                  "example": "email"
-                },
-                "senha": {
-                  "type": "string",
-                  "example": "senha"
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "nome": {
+                    "type": "string",
+                    "example": "nome"
+                  },
+                  "email": {
+                    "type": "string",
+                    "example": "email"
+                  },
+                  "senha": {
+                    "type": "string",
+                    "example": "senha"
+                  }
                 }
-              },
-              "required": [
-                "nome",
-                "email",
-                "senha"
-              ]
+              }
             }
           }
         ],
@@ -853,19 +848,22 @@
             "required": true,
             "description": "Dados para criação do locatarios",
             "schema": {
-              "type": "object",
-              "properties": {
-                "nome": {
-                  "type": "string",
-                  "example": "nome"
-                },
-                "telefone": {
-                  "type": "string",
-                  "example": "telefone"
-                },
-                "cpf_cnpj": {
-                  "type": "string",
-                  "example": "cpf_cnpj"
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "nome": {
+                    "type": "string",
+                    "example": "nome"
+                  },
+                  "telefone": {
+                    "type": "string",
+                    "example": "telefone"
+                  },
+                  "cpf_cnpj": {
+                    "type": "string",
+                    "example": "cpf_cnpj"
+                  }
                 }
               }
             }
@@ -907,26 +905,24 @@
             "required": true,
             "description": "Novos dados do locatarios",
             "schema": {
-              "type": "object",
-              "properties": {
-                "nome": {
-                  "type": "string",
-                  "example": "nome"
-                },
-                "telefone": {
-                  "type": "string",
-                  "example": "telefone"
-                },
-                "cpf_cnpj": {
-                  "type": "string",
-                  "example": "cpf_cnpj"
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "nome": {
+                    "type": "string",
+                    "example": "nome"
+                  },
+                  "telefone": {
+                    "type": "string",
+                    "example": "telefone"
+                  },
+                  "cpf_cnpj": {
+                    "type": "string",
+                    "example": "cpf_cnpj"
+                  }
                 }
-              },
-              "required": [
-                "nome",
-                "telefone",
-                "cpf_cnpj"
-              ]
+              }
             }
           }
         ],
@@ -1066,10 +1062,90 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Lista de imoveis retornada com sucesso",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "example": "5fec05f0-adec-4453-ba09-1264b059ea31"
+                  },
+                  "matricula": {},
+                  "logradouro": {
+                    "type": "string",
+                    "example": "rua cidade ecologica"
+                  },
+                  "bairro": {
+                    "type": "string",
+                    "example": "edson queiroz"
+                  },
+                  "cidade": {
+                    "type": "string",
+                    "example": "fortaleza"
+                  },
+                  "estado": {
+                    "type": "string",
+                    "example": "ce"
+                  },
+                  "numero": {
+                    "type": "string",
+                    "example": "255"
+                  },
+                  "complemento": {},
+                  "cep": {
+                    "type": "string",
+                    "example": "60160280"
+                  },
+                  "valor_aluguel": {
+                    "type": "number",
+                    "example": 500
+                  },
+                  "iptu": {},
+                  "valor_condominio": {},
+                  "metragem": {
+                    "type": "number",
+                    "example": 43
+                  },
+                  "quartos": {
+                    "type": "number",
+                    "example": 3
+                  },
+                  "suites": {
+                    "type": "number",
+                    "example": 2
+                  },
+                  "banheiros": {
+                    "type": "number",
+                    "example": 2
+                  },
+                  "garagens": {},
+                  "tipo_id": {
+                    "type": "string",
+                    "example": "92cf6d93-5df2-4a1c-93ca-e64a61843608"
+                  },
+                  "locatario_id": {},
+                  "createdAt": {
+                    "type": "string",
+                    "example": "2026-11-06T14:01:25.559Z"
+                  },
+                  "updatedAt": {
+                    "type": "string",
+                    "example": "2026-11-06T14:01:25.559Z"
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Erro interno no servidor"
           }
         }
       },
@@ -1217,8 +1293,91 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "Lista de imoveis retornada com sucesso",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "example": "5fec05f0-adec-4453-ba09-1264b059ea31"
+                  },
+                  "matricula": {},
+                  "logradouro": {
+                    "type": "string",
+                    "example": "rua cidade ecologica"
+                  },
+                  "bairro": {
+                    "type": "string",
+                    "example": "edson queiroz"
+                  },
+                  "cidade": {
+                    "type": "string",
+                    "example": "fortaleza"
+                  },
+                  "estado": {
+                    "type": "string",
+                    "example": "ce"
+                  },
+                  "numero": {
+                    "type": "string",
+                    "example": "255"
+                  },
+                  "complemento": {},
+                  "cep": {
+                    "type": "string",
+                    "example": "60160280"
+                  },
+                  "valor_aluguel": {
+                    "type": "number",
+                    "example": 500
+                  },
+                  "iptu": {},
+                  "valor_condominio": {},
+                  "metragem": {
+                    "type": "number",
+                    "example": 43
+                  },
+                  "quartos": {
+                    "type": "number",
+                    "example": 3
+                  },
+                  "suites": {
+                    "type": "number",
+                    "example": 2
+                  },
+                  "banheiros": {
+                    "type": "number",
+                    "example": 2
+                  },
+                  "garagens": {},
+                  "tipo_id": {
+                    "type": "string",
+                    "example": "92cf6d93-5df2-4a1c-93ca-e64a61843608"
+                  },
+                  "locatario_id": {},
+                  "createdAt": {
+                    "type": "string",
+                    "example": "2026-11-06T14:01:25.559Z"
+                  },
+                  "updatedAt": {
+                    "type": "string",
+                    "example": "2026-11-06T14:01:25.559Z"
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
           "401": {
             "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Erro interno no servidor"
           }
         }
       }
@@ -1518,7 +1677,11 @@
     },
     "/historico-imovel/": {
       "get": {
-        "description": "",
+        "tags": [
+          "historico-imoveis"
+        ],
+        "summary": "Buscar",
+        "description": "Retorna um array de historico-imoveis cadastrados",
         "parameters": [
           {
             "name": "authorization",
@@ -1528,20 +1691,132 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Lista de historico-imoveis retornada com sucesso",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "example": "ea203852-07f9-47df-841d-abfa36670d9c"
+                  },
+                  "descricao": {
+                    "type": "string",
+                    "example": "teste de historico de imovel"
+                  },
+                  "data_entrada": {
+                    "type": "string",
+                    "example": "2026-11-06T00:00:00.000Z"
+                  },
+                  "data_saida": {
+                    "type": "string",
+                    "example": "2026-11-06T00:00:00.000Z"
+                  },
+                  "valor_aluguel": {
+                    "type": "number",
+                    "example": 0
+                  },
+                  "valor_iptu": {
+                    "type": "number",
+                    "example": 0
+                  },
+                  "imovel_id": {
+                    "type": "string",
+                    "example": "5fec05f0-adec-4453-ba09-1264b059ea31"
+                  },
+                  "locatario_id": {
+                    "type": "string",
+                    "example": "6cf0d117-320a-4781-87be-62da4d588e11"
+                  },
+                  "valor_condominio": {
+                    "type": "number",
+                    "example": 1024
+                  },
+                  "createdAt": {
+                    "type": "string",
+                    "example": "2026-11-06T21:49:00.419Z"
+                  },
+                  "updatedAt": {
+                    "type": "string",
+                    "example": "2026-11-06T21:49:00.419Z"
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
           },
           "401": {
             "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Erro interno no servidor"
           }
         }
       },
       "post": {
-        "description": "",
+        "tags": [
+          "historico-imoveis"
+        ],
+        "summary": "Criar",
+        "description": "Cria um novo historico-imoveis",
         "parameters": [
           {
             "name": "authorization",
             "in": "header",
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "description": "Dados para criação do historico-imoveis",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "example": "ea203852-07f9-47df-841d-abfa36670d9c"
+                  },
+                  "descricao": {
+                    "type": "string",
+                    "example": "teste de historico de imovel"
+                  },
+                  "data_entrada": {
+                    "type": "string",
+                    "example": "2026-11-06T00:00:00.000Z"
+                  },
+                  "data_saida": {
+                    "type": "string",
+                    "example": "2026-11-06T00:00:00.000Z"
+                  },
+                  "valor_aluguel": {
+                    "type": "number",
+                    "example": 0
+                  },
+                  "valor_iptu": {
+                    "type": "number",
+                    "example": 0
+                  },
+                  "imovel_id": {
+                    "type": "string",
+                    "example": "5fec05f0-adec-4453-ba09-1264b059ea31"
+                  },
+                  "locatario_id": {
+                    "type": "string",
+                    "example": "6cf0d117-320a-4781-87be-62da4d588e11"
+                  },
+                  "valor_condominio": {
+                    "type": "number",
+                    "example": 1024
+                  }
+                }
+              }
+            }
           }
         ],
         "responses": {
@@ -1556,23 +1831,74 @@
     },
     "/historico-imovel/{id}": {
       "put": {
-        "description": "",
+        "tags": [
+          "historico-imoveis"
+        ],
+        "summary": "Editar",
+        "description": "Edita um historico-imoveis existente pelo ID",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "ID do nível (UUID)"
           },
           {
             "name": "authorization",
             "in": "header",
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "description": "Novos dados do historico-imoveis",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "descricao": {
+                    "type": "string",
+                    "example": "teste de historico de imovel"
+                  },
+                  "data_entrada": {
+                    "type": "string",
+                    "example": "2026-11-06"
+                  },
+                  "data_saida": {
+                    "type": "string",
+                    "example": "2026-11-06"
+                  },
+                  "valor_aluguel": {
+                    "type": "number",
+                    "example": 0
+                  },
+                  "valor_iptu": {
+                    "type": "number",
+                    "example": 0
+                  },
+                  "locatario_id": {
+                    "type": "string",
+                    "example": "6cf0d117-320a-4781-87be-62da4d588e11"
+                  },
+                  "valor_condominio": {
+                    "type": "number",
+                    "example": 1024
+                  }
+                }
+              }
+            }
           }
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Registro atualizado com sucesso",
+            "type": "success"
+          },
+          "400": {
+            "description": "Dados inválidos"
           },
           "401": {
             "description": "Unauthorized"
@@ -1580,13 +1906,18 @@
         }
       },
       "delete": {
-        "description": "",
+        "tags": [
+          "historico-imoveis"
+        ],
+        "summary": "Deletar",
+        "description": "Remove um historico-imoveis pelo ID",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "ID do historico-imoveis que será deletado"
           },
           {
             "name": "authorization",
@@ -1598,15 +1929,28 @@
           "200": {
             "description": "OK"
           },
+          "204": {
+            "description": "Registro deletado com sucesso"
+          },
           "401": {
             "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Registro não encontrado"
+          },
+          "500": {
+            "description": "Erro interno no servidor"
           }
         }
       }
     },
     "/historico-imovel/{{where{id}}": {
       "delete": {
-        "description": "",
+        "tags": [
+          "historico-imoveis"
+        ],
+        "summary": "Buscar",
+        "description": "Retorna um array de historico-imoveis cadastrados",
         "parameters": [
           {
             "name": null,
@@ -1621,8 +1965,69 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "Lista de historico-imoveis retornada com sucesso",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "example": "ea203852-07f9-47df-841d-abfa36670d9c"
+                  },
+                  "descricao": {
+                    "type": "string",
+                    "example": "teste de historico de imovel"
+                  },
+                  "data_entrada": {
+                    "type": "string",
+                    "example": "2026-11-06T00:00:00.000Z"
+                  },
+                  "data_saida": {
+                    "type": "string",
+                    "example": "2026-11-06T00:00:00.000Z"
+                  },
+                  "valor_aluguel": {
+                    "type": "number",
+                    "example": 0
+                  },
+                  "valor_iptu": {
+                    "type": "number",
+                    "example": 0
+                  },
+                  "imovel_id": {
+                    "type": "string",
+                    "example": "5fec05f0-adec-4453-ba09-1264b059ea31"
+                  },
+                  "locatario_id": {
+                    "type": "string",
+                    "example": "6cf0d117-320a-4781-87be-62da4d588e11"
+                  },
+                  "valor_condominio": {
+                    "type": "number",
+                    "example": 1024
+                  },
+                  "createdAt": {
+                    "type": "string",
+                    "example": "2026-11-06T21:49:00.419Z"
+                  },
+                  "updatedAt": {
+                    "type": "string",
+                    "example": "2026-11-06T21:49:00.419Z"
+                  }
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
+          },
           "401": {
             "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Erro interno no servidor"
           }
         }
       }

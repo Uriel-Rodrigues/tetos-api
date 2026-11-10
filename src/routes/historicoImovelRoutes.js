@@ -10,15 +10,19 @@ rotas.get("/",
       #swagger.description = 'Retorna um array de historico-imoveis cadastrados'
       #swagger.responses[200] = {
           description: 'Lista de historico-imoveis retornada com sucesso',
-          schema: [{ 
-            id: 'c801b5bb-e915-46cf-87c0-4feede784f73',
-            descricao: 'manutencao feita teste editar',
-            valor: 10,
-            data: '2026-11-06T00:00:00.000Z',
-            createdAt: '2026-11-06T20:32:27.141Z',
-            updatedAt: '2026-11-06T20:32:27.141Z',
-            imovel_id: '5fec05f0-adec-4453-ba09-1264b059ea31'
-        }]
+          schema: [{
+            id: 'ea203852-07f9-47df-841d-abfa36670d9c',
+            descricao: 'teste de historico de imovel',
+            data_entrada: '2026-11-06T00:00:00.000Z',
+            data_saida: '2026-11-06T00:00:00.000Z',
+            valor_aluguel: 0,
+            valor_iptu: 0,
+            imovel_id: '5fec05f0-adec-4453-ba09-1264b059ea31',
+            locatario_id: '6cf0d117-320a-4781-87be-62da4d588e11',
+            valor_condominio: 1024,
+            createdAt: '2026-11-06T21:49:00.419Z',
+            updatedAt: '2026-11-06T21:49:00.419Z'
+	    }]
       }
       #swagger.responses[500] = {
           description: 'Erro interno no servidor'
@@ -35,11 +39,16 @@ rotas.post("/",
           required: true, 
           description: 'Dados para criação do historico-imoveis',
           schema: [{
-            descricao: 'outra manutencao manutencao feita',
-            valor: 1022,
-            data: '2026-11-06',
-            imovel_id: '5fec05f0-adec-4453-ba09-1264b059ea31'
-            }]
+                id: 'ea203852-07f9-47df-841d-abfa36670d9c',
+                descricao: 'teste de historico de imovel',
+                data_entrada: '2026-11-06T00:00:00.000Z',
+                data_saida: '2026-11-06T00:00:00.000Z',
+                valor_aluguel: 0,
+                valor_iptu: 0,
+                imovel_id: '5fec05f0-adec-4453-ba09-1264b059ea31',
+                locatario_id: '6cf0d117-320a-4781-87be-62da4d588e11',
+                valor_condominio: 1024
+	        }]
           } 
       }
       #swagger.responses[201] = {
@@ -69,12 +78,15 @@ rotas.put("/:id",
           in: 'body', 
           required: true, 
           description: 'Novos dados do historico-imoveis',
-          schema: [{ 
-            descricao: 'outra manutencao manutencao feita',
-            valor: 1022,
-            data: '2026-11-06',
-            imovel_id: '5fec05f0-adec-4453-ba09-1264b059ea31',
-        }] 
+          schema: [{
+                descricao: 'teste de historico de imovel',
+                data_entrada: '2026-11-06',
+                data_saida: '2026-11-06',
+                valor_aluguel: 0,
+                valor_iptu: 0,
+                locatario_id: '6cf0d117-320a-4781-87be-62da4d588e11',
+                valor_condominio: 1024
+	        }] 
       }
       #swagger.responses[200] = {
           type: 'success',
