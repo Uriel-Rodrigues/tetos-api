@@ -1,5 +1,4 @@
 const PRISMA = require("../services");
-const bcrytpt = require("bcrypt")
 
 // buscar registros na tabela historico_manutencoes 
 async function buscar (req, res) {
@@ -20,15 +19,14 @@ async function buscar (req, res) {
 // criar registros na tabela historico_manutencoes 
 async function criar (req, res) {
     try {
+        
         let {descricao, valor, data, imovel_id} = req.body;
-
-        senha = await bcrytpt.hash(senha, 10)
 
         const sql = await PRISMA.historico_manutencoes.create({
             data:{
                 descricao: descricao,
                 valor: valor,
-                data: data,
+                data: new Date(`${data}`),
                 imovel_id: imovel_id
             }
         })
@@ -50,12 +48,15 @@ async function criar (req, res) {
 // editar registros na tabela historico_manutencoes 
 async function editar (req, res) {
     try {
-        const dados = req.body;
+        const {descricao, valor, data, imovel_id} = req.body;
         const {id} = req.params
 
         const sql = await PRISMA.historico_manutencoes.update({
             where: {id},
-            data:dados
+            data: {
+                descricao: descricao,
+                valor: valor,
+                data: new Date(`${data}`)            }
         })
 
         res.json({

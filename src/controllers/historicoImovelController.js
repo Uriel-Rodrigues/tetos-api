@@ -21,7 +21,9 @@ async function criar (req, res) {
         const dados = req.body;
         const sql = await PRISMA.historico_imovel.create({
             data:{
-                dados: dados
+                ...dados, 
+                data_entrada: new Date(`${dados.data_entrada}`),
+                data_saida: new Date(`${dados.data_saida}`)
             }
         })
 

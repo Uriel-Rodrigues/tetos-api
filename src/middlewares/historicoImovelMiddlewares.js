@@ -3,11 +3,8 @@ function validarDados(req, res, next) {
         "descricao",
         "data_entrada",
         "data_saida",
-        "valor_aluguel",
-        "valor_iptu",
         "imovel_id",
         "locatario_id",
-        "valor_condominio"
     ];
     const dados = req.body;
     let campoAusentes = colunas.filter(chave => !Object.keys(dados).includes(chave));
@@ -18,11 +15,9 @@ function validarDados(req, res, next) {
                 type: "warning",
                 description: `Coluna ${campo} não informada`
             }
-        }))
-    
-        next();
-
+        }))      
     }
+    next();
 }
 
 module.exports = {

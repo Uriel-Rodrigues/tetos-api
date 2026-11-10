@@ -14,11 +14,9 @@ function validarDados(req, res, next) {
                 type: "warning",
                 description: `Coluna ${campo} não informada`
             }
-        }))
-    
-        next();
-
+        }))      
     }
+    next();
 }
 
 module.exports = {
